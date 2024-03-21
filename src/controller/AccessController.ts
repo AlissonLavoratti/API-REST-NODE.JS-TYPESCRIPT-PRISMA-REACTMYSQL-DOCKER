@@ -18,3 +18,11 @@ export const getAllAccesses = async (req: Request, res: Response) => {
 
     return res.json(accesses);
 };
+
+export const getAllAccesseslogin = async (req: Request, res: Response) => {
+    const { name, password} = req.body;//significa que ele vai receber as informações do corpo do html
+    
+    const accesses = await prisma.access.findMany()
+
+    return res.json(accesses);
+};
