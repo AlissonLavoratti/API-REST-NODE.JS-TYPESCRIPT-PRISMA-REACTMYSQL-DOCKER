@@ -1,0 +1,59 @@
+  // This is your Prisma schema file,
+  // learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+  // Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+  // Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+  generator client {
+    provider = "prisma-client-js"
+  }
+
+  //Para burlar utilize o comando "yarn prisma migrate dev"
+  //Antes execute: Set-ExecutionPolicy -ExecutionPolicy Bypass
+
+  //Se realiar alterações na tabela, basta executar "prisma migrate dev" que o sistema roda as altarações
+
+  datasource db {
+    provider = "mysql"
+    url      = env("DATABASE_URL")
+  }
+
+  model User {
+    id         String      @id @default(uuid()) //inteiro autoincrement -- Também poderia ser uuid() (qual a diferença? não sei rsrs)
+    name       String 
+    email      String   @unique //unico
+    password   String
+    Access      Access?   @relation(fields: [acessId], references: [id])
+    acessId    String?//opcional
+    created_at DateTime @default(now())
+    updated_at DateTime @updatedAt
+
+    @@map("users")
+  }
+
+  model Access {
+    id         String   @id @default(uuid())
+    name       String   @unique
+    user       User[]
+    created_at DateTime @default(now())
+    updated_at DateTime @updatedAt
+  }
+
+  model Product {
+    id         String   @id @default(uuid())
+    name       String
+    price      String
+    amount     Int
+    created_at DateTime @default(now())
+    updated_at DateTime @updatedAt
+    Store      Store?   @relation(fields: [storeId], references: [id])
+    storeId    String?
+  }
+
+  model Store {
+    id         String    @id @default(uuid())
+    name       String
+    Product    Product[]
+    created_at DateTime  @default(now())
+    updated_at DateTime  @updatedAt
+  }
