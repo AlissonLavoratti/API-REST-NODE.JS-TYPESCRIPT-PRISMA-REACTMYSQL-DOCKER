@@ -1,4 +1,4 @@
-import { Request, Response } from "express";
+import { Request, Response, request } from "express";
 import { prisma } from "../database/prisma";
 
 
@@ -20,9 +20,10 @@ export const getAllAccesses = async (req: Request, res: Response) => {
 };
 
 export const getAllAccesseslogin = async (req: Request, res: Response) => {
-    const { name, password} = req.body;//significa que ele vai receber as informações do corpo do html
+     const { name, password} = req.body;//significa que ele vai receber as informações do corpo do html
+    console.log(name, password)
     
-    const accesses = await prisma.access.findMany()
+    // const accesses = await prisma.access.findMany()
 
-    return res.json(accesses);
+    // return res.json(accesses);
 };

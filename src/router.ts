@@ -11,7 +11,7 @@ router.post("/user", createUser);
 router.post("/access", createAccess);
 router.get("/accesses", getAllAccesses);
 router.delete("/delete-users", deleteManyUser);
-router.get("/login-user-pass", getAllAccesseslogin)
+router.get("/login", getAllAccesseslogin)//AcessControler
 
 
 //TESTES GIT

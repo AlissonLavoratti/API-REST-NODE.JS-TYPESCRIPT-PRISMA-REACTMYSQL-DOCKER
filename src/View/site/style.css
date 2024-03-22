@@ -1,0 +1,29 @@
+body{
+    background-color: black;
+}
+.center{
+    width: 280px; /* largura desejada para o card */
+    margin: 0 auto; /* centralizar horizontalmente */
+    margin-top: 100px; /* margem superior para centralizar verticalmente */
+    background-color: #ffffff; /* cor de fundo do card */
+    border-radius: 8px; /* borda arredondada */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* sombra */
+    padding: 20px; /* espaçamento interno */
+}
+
+.input{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 19px;
+}
+#name{
+    margin-bottom: 15px;
+}
+#password{
+    margin-bottom: 10px;            
+}
+#lbl{
+    margin-right: 14px;
+}
+.btnn{  
+    margin-left: 50px;
+}
