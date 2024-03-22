@@ -11,7 +11,7 @@ import { router } from './router';
 
 //GET - SELECT
 //POST - INSERT
-//
+//DELETE
 
 const app = Express();
 app.use(Express.json());
