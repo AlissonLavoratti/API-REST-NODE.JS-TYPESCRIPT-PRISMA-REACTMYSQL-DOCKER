@@ -4,9 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev:server": "tsnd --exit-child --respawn --transpile-only --files src/server.ts",
-    "dev:client": "webpack-dev-server --mode development --open",
-    "dev": "npm-run-all -p dev:server dev:client"
+    "dev": "tsnd --exit-child --respawn --transpile-only --files src/server.ts"
   },
   "keywords": [],
   "author": "",

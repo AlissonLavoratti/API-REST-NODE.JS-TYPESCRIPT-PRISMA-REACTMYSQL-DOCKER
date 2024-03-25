@@ -41,7 +41,7 @@ export const site = async (req: Request, res: Response) => {//funcao assincrona,
     // return res.json(accesses);
     try {
         // Lendo o conteúdo do arquivo index.js
-        const indexFileContent = fs.readFileSync('src/index.js', 'utf-8');
+        const indexFileContent = fs.readFileSync('src/View/site/index.html', 'utf-8');
 
         // Enviando o conteúdo do arquivo como resposta
         res.send(indexFileContent);
